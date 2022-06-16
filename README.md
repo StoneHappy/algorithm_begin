@@ -1,11 +1,11 @@
-# my_cpp_empty_project
+# algorithm begin
 
 
 ## how to use it
 ```bash
 # clone repository and submodule
 
-git clone --recursive https://github.com/StoneHappy/my_cpp_empty_project.git
+git clone --recursive https://github.com/StoneHappy/algorithm_begin.git
 
 # create buid dir
 
