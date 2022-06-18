@@ -66,4 +66,11 @@ namespace BinaryTree
 			return root;
 		}
 	}
+
+	namespace connect
+	{
+		Node* connect(Node* root) {
+			return root;
+		}
+	}
 }
