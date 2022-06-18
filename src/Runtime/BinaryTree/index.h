@@ -19,4 +19,9 @@ namespace BinaryTree
 	{
 		std::vector<int> preorderTraversal(TreeNode* root);
 	}
+
+	namespace invertTree
+	{
+		TreeNode* invertTree(TreeNode* root);
+	}
 }
