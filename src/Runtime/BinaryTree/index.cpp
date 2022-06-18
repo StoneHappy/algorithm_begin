@@ -26,4 +26,25 @@ namespace BinaryTree
 			return globalDiameter;
 		}
 	}
+
+	namespace preorderTraversal
+	{
+		std::vector<int> preorderTraversal(TreeNode* root)
+		{
+			if (!root)
+			{
+				return {};
+			}
+
+			auto vl = preorderTraversal(root->left);
+			auto vr = preorderTraversal(root->right);
+
+			std::vector<int> rnt = {root->val};
+			
+			rnt.insert(rnt.end(), vl.begin(), vl.end());
+			rnt.insert(rnt.end(), vr.begin(), vr.end());
+
+			return rnt;
+		}
+	}
 }
