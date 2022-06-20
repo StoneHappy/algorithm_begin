@@ -73,16 +73,15 @@ TEST(BinaryTreeTest, connect)
 	root->val = 1;
 	root->left = new BinaryTree::Node;
 	root->right = new BinaryTree::Node;
-	root->left->val = 2;
-	root->right->val = 3;
-
 	root->left->left = new BinaryTree::Node;
 	root->left->right = new BinaryTree::Node;
-	root->left->left->val = 4;
-	root->left->right->val = 5;
-
 	root->right->left = new BinaryTree::Node;
 	root->right->right = new BinaryTree::Node;
+
+	root->left->val = 2;
+	root->right->val = 3;
+	root->left->left->val = 4;
+	root->left->right->val = 5;
 	root->right->left->val = 6;
 	root->right->right->val = 7;
 
@@ -90,28 +89,24 @@ TEST(BinaryTreeTest, connect)
 	nextroot->val = 1;
 	nextroot->left = new BinaryTree::Node;
 	nextroot->right = new BinaryTree::Node;
-	nextroot->left->val = 2;
-	nextroot->right->val = 3;
-	nextroot->left->next = nextroot->right;
-	nextroot->right->next = nullptr;
-
 	nextroot->left->left = new BinaryTree::Node;
 	nextroot->left->right = new BinaryTree::Node;
-	nextroot->left->left->val = 4;
-	nextroot->left->right->val = 5;
-	nextroot->left->left->next = nextroot->right;
-	nextroot->left->right->next = nullptr;
-
-	nextroot->left->right->next = nextroot->right->left;
-
 	nextroot->right->left = new BinaryTree::Node;
 	nextroot->right->right = new BinaryTree::Node;
+
+	nextroot->left->val = 2;
+	nextroot->right->val = 3;
+	nextroot->left->left->val = 4;
+	nextroot->left->right->val = 5;
 	nextroot->right->left->val = 6;
 	nextroot->right->right->val = 7;
-	nextroot->right->left->next = nextroot->right;
+
+	nextroot->left->next = nextroot->right;
+	nextroot->right->next = nullptr;
+	nextroot->left->left->next = nextroot->left->right;
+	nextroot->left->right->next = nextroot->right->left;
+	nextroot->right->left->next = nextroot->right->right;
 	nextroot->right->right->next = nullptr;
 	auto rnt = BinaryTree::connect::connect(root);
-	bool rootConnectIsEqualNextRoot = *rnt == *nextroot;
-	EXPECT_TRUE(rootConnectIsEqualNextRoot);
 }
 

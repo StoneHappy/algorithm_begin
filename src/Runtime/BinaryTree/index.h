@@ -24,25 +24,6 @@ namespace BinaryTree
 
 		Node(int _val, Node* _left, Node* _right, Node* _next)
 			: val(_val), left(_left), right(_right), next(_next) {}
-
-		bool operator==(const Node& other) {
-			Node* nextThis = this->next;
-			Node* nextOther = other.next;
-			bool rnt = true;
-			while (nextThis && nextOther)
-			{
-				if (nextThis->val != nextThis->val)
-				{
-					return false;
-				}
-				nextThis = nextThis->next;
-				nextOther = nextOther->next;
-			}
-
-			rnt = (this->left == other.left) && (this->right == other.right);
-
-			return rnt;
-		}
 	};
 
 	namespace diameterOfBinaryTree
